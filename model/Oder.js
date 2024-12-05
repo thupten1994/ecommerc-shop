@@ -64,4 +64,6 @@ const oderSchema = mongoose.Schema(
   { timestaps: true }
 );
 
-module.exports = mongoose.model("OderItem", oderSchema);
+const OderItem = mongoose.model("OderItem", oderSchema);
+
+module.exports = OderItem;

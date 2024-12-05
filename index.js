@@ -1,11 +1,13 @@
+require("dotenv").config();
+const PORT = process.env.PORT;
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+
 const userSeedRouter = require("./dataSeeder");
 const userRoute = require("./routes/Users");
-require("dotenv").config();
-const PORT = process.env.PORT;
 const productRoute = require("./routes/Products");
+const oderRoute = require("./routes/Oders");
 
 try {
   mongoose
@@ -26,3 +28,4 @@ app.use("/seed", userSeedRouter);
 app.use("/seed", userSeedRouter);
 app.use("/users", userRoute);
 app.use("/api/product", productRoute);
+app.use("/api/oder", oderRoute);
